@@ -369,3 +369,67 @@ fruits = ["apple", "mango", "kiwi", "litchi", "orange"]
 # now using list_comprehension
 list_comprhension = [x for x in fruits if "a" in x]
 # print(list_comprhension)
+
+
+# tuple
+# tuple1 = (1, 2, 3, 4)
+# print(tuple1[0])
+# print(tuple1[1])
+# print(tuple1[2])
+# print(type, tuple1)
+
+# list1 = [10, 20, 29]
+# tuple2 = tuple(list1)
+# print(type, tuple2)
+# print(tuple2)
+
+# singleton tuple
+
+# singleton_tuple = (121,)
+# print(singleton_tuple)
+
+# str = "sahil"
+# tuple3 = tuple(str)
+# print(tuple3)
+
+# for i in tuple1:
+#     print(i)
+
+# for index, ch in enumerate(tuple2):
+#     print(f"index is {index} and character is {ch}")
+
+
+# i = 0
+# while i < len(tuple2):
+#     print()
+
+
+# strName = "Sahil"
+# nameTuple = tuple(strName)
+
+# n = 0
+# c = 0
+# while n < len(nameTuple):
+#     if nameTuple[n] == "a":
+#         c += 1
+#         print(f"character 'a' is coming {c} times in your name")
+#     n += 1
+
+# tuple function
+
+# t1 = ("sahil")
+# print(t1.count("a"))
+
+# strName = "Sahil"
+# fnameTuple = tuple(strName)
+# lname = "Raj"
+# lnameTuple = tuple(lname)
+
+# fullName = fnameTuple + lnameTuple
+# repeatition_tuple = fullName * 2
+
+# print(fullName)
+
+
+tuple1 = (1, 2, 3, 4)
+# tuple1[2]=30 #can't be achieved
