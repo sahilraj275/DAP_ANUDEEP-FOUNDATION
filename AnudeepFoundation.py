@@ -433,3 +433,114 @@ list_comprhension = [x for x in fruits if "a" in x]
 
 tuple1 = (1, 2, 3, 4)
 # tuple1[2]=30 #can't be achieved
+
+
+#! set
+# set stores only unique values.
+# set datas are unordered.
+# set is mutable collection of elements
+# A set in Python is an unordered collection of unique elements. It is a built-in data type
+# that is used to store a collection of values, with the key characteristic being that each
+# element in a set must be unique. In other words, a set does not allow duplicate values.
+# No Indexing: Sets do not support indexing
+
+set1 = {1, 2, 3}
+# print(set1)
+
+set2 = {1, 1, 1, 2, 3, 3, 4, 5}
+# print(set2)  # 1,2,3,4,5 its automatically remove duplicate values
+
+# print(len(set1))
+
+set1.remove(1)
+# print(set1)  # 2,3
+
+set1.discard(1)
+# print(set1)
+
+strSet = {"sahil"}
+# print(strSet)
+
+# strSet.remove('p') #it will search for the character if it is not there it will throw an error
+# strSet.discard('p') # but if the character is not present there it won't throw any error
+
+# set2.pop()  # it's remove first element only in list we pass the element along with pop method which we want to remove
+# print(dir(set1))
+
+
+# set2.clear() #it's remove all the elemetn from the set
+set1 = {1, 2, 3}
+set2 = {1, 1, 1, 2, 3, 3, 4, 5}
+set1.add(100)
+set1.add(90)
+# print(set1)
+
+# print(set1 - set2)
+# setz = {
+#     [
+#         1,
+#         2,
+#         3,
+#         4,
+#     ],
+#     [5, 6, 7, 8],
+# }
+# print(setz) #we can't store list in set
+
+setx = {(1, 2, 3), (5, 6, 7)}
+# print(setx)  # we can store tuple inside a set
+
+
+# setA = {1, 2, 3, 4}
+# setB = {4, 5, 6, 7, 8, 9}
+# it includes both the elements of both the set without including duplicate values
+# print(setA.union(setB))
+
+
+setC = {1, 2, 3, 4, 5}
+setD = {1, 2, 3, 11, 12, 13}
+
+setZ = setC.intersection(setD)
+# it only returns the common elements of both sets   without including duplicate values
+# print(setZ)
+
+
+# print({100, 200, 300, 400}.difference({100, 1000, 2000, 200, 300}))
+
+
+# various operation in set
+setA = {1, 2, 5}
+# setA.add(4)
+# print(setA)
+
+# removing elements(remove)
+# setA.remove(100)
+# print(setA)
+
+# removing elements(discard)
+# setA.discard(100) # it won't throw any error if the value is not present there
+# print(setA)
+
+# clearing a set
+# setA.clear()
+# print(setA)
+
+#! union
+setA = {1, 2, 5}
+setB = {5, 6, 7}
+# setC = setA.union(setB) #it will return all values from setA and setB excluding duplicate values
+# print(setC)
+
+#! intersection
+setA = {1, 2, 5}
+setB = {5, 6, 7}
+
+# setC = setA.intersection(setB) # it will return only the common elements from both the sets
+# print(setC)
+
+#! Difference
+setA = {1, 2, 5}
+setB = {5, 6, 7}
+
+# setC = setA.difference(setB) # difference returns only from the first set and returns only elements which is not present in second set.
+print(setC)
