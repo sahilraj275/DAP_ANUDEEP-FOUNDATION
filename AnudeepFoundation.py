@@ -543,4 +543,80 @@ setA = {1, 2, 5}
 setB = {5, 6, 7}
 
 # setC = setA.difference(setB) # difference returns only from the first set and returns only elements which is not present in second set.
-print(setC)
+# print(setC)
+
+my_list = [1, 2, 2, 3, 4, 4, 5]
+x = list(set(my_list))
+# print(x)
+
+
+# Dictionary ===> it is unordered collection of data structure it stores data in key value pairs it is mutable.
+
+student = {"name": "sahil", "age": 25, "home": "Patna"}
+
+# print(student.get("name"))
+# print(student.keys())
+# print(student.clear())
+# print(student.items()) #dict_items([('name', 'sahil'), ('age', 25), ('home', 'Patna')])
+
+# print(student.values())
+
+# student.pop("name")
+# print(student)
+
+# val = student.popitem()
+# print(val)
+
+# student.update({"sex": "male"})
+# print(student)
+
+
+# print(10 + 2)
+# print(10 * 4)
+# try:
+#     print(10 / 0)  # abnormal statement exceptional handling
+# except Exception as e:
+#     print(e)
+
+# print("sahil")
+# print(45 - 2)
+
+
+# try:
+#     z = 112
+#     print(z)
+# except NameError:
+#     print("Please define z varible first")
+# except zeroDivisionError:
+#     print("Infinity")
+# else:
+#     print("There is no erro in try block why you have write")
+
+
+# OOps in python
+
+
+# class is a blueprint to create a object.
+class Person:
+    # constructor is a specail method it is use to initialize object of a class in python.
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    # method
+    def PersonDetail(self):
+        print(f"Person name is {self.name} and his age is {self.age}")
+
+
+sahil = Person("Sahil", 25)  # variableName = ClassName --> this is how we create object
+sahil.PersonDetail()
+# Rahil = Person()
+
+# constructor  is use to load all the members of the class into the object
+
+# whenever we create a object constructor automatically executes.
+
+# if a programmer does not define any constructor inside a class interpreter automatically create a default constructor.
+# def __init__(self):
+#   super()
+# self holds address of current object
