@@ -622,4 +622,39 @@ sahil.PersonDetail()
 # self holds address of current object
 
 
-   
+# custom error
+
+
+class CustomError(Exception):
+    def __init__(self, msg):
+        self.msg = msg
+        super().__init__(f"This is a custom error {msg}")
+
+
+def customErrorExapmle():
+    raise CustomError("Custom error")
+
+
+customErrorExapmle()
+
+
+# inheritance
+class Parent:
+    def __init__(self):
+        self.i = 10
+
+
+class Child(Parent):
+    i = 20  # Correct class variable shadowing
+
+    def __init__(self):
+        self.j = 20
+        super().__init__()
+
+    def print_data(self):
+        print(self.i)  # Correctly refer to instance variable i
+
+
+# Creating an object of Child
+child_obj = Child()
+child_obj.print_data()
