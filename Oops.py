@@ -73,22 +73,22 @@ s = Student(
 # Decorator in python -> decorators allow us to wrap another function  in order to extend the behaviour of the wrapped function without permanently modifying it.
 
 
-class College:
-    def __init__(self, name, location):
-        self.name = name
-        self.location = location
-        print(f"The name of the college is {name} and it's location is {location}")
+# class College:
+#     def __init__(self, name, location):
+#         self.name = name
+#         self.location = location
+#         print(f"The name of the college is {name} and it's location is {location}")
 
-    # This is a static method, defined using the @staticmethod decorator.
-    # this is called decorator it allows us to write a function without passing self parameter.
-    @staticmethod
-    def Teacher():
-        print("Hello from teacher!")
+#     # This is a static method, defined using the @staticmethod decorator.
+#     # this is called decorator it allows us to write a function without passing self parameter.
+#     @staticmethod
+#     def Teacher():
+#         print("Hello from teacher!")
 
 
-c = College("Happy College", "Siwan")
+# c = College("Happy College", "Siwan")
 
-c.Teacher()
+# c.Teacher()
 
 
 # Abstraction
@@ -152,28 +152,76 @@ c.Teacher()
 # create a method for debit , credit and printing the balance
 
 
-class Account:
-    def __init__(self, acc, bal):
-        self.account_number = acc
-        self.balance = bal
+# class Account:
+#     def __init__(self, acc, bal):
+#         self.account_number = acc
+#         self.balance = bal
 
-    # debit method
-    def debit(self, amount):
-        self.balance -= amount
-        print(f"Rs {amount} is debited from account ")
-        print("total balance=", self.get_balance())
+#     # debit method
+#     def debit(self, amount):
+#         self.balance -= amount
+#         print(f"Rs {amount} is debited from account ")
+#         print("total balance=", self.get_balance())
 
-    # credit method
-    def credit(self, amount):
-        self.balance += amount
-        print(f"Rs {amount} is credited from account ")
-        print("total balance=", self.get_balance())
+#     # credit method
+#     def credit(self, amount):
+#         self.balance += amount
+#         print(f"Rs {amount} is credited from account ")
+#         print("total balance=", self.get_balance())
 
-    def get_balance(self):
-        return self.balance
+#     def get_balance(self):
+#         return self.balance
 
 
-acc1 = Account(12000, 897878)
-acc1.debit(2000)
-# acc1.credit()
-acc1.get_balance()
+# acc1 = Account(12000, 897878)
+# acc1.debit(2000)
+# # acc1.credit()
+# acc1.get_balance()
+
+# del keyword
+# used to  delete  object properties or object itself.
+
+# class Student:
+#     def __init__(self, name):
+#         self.name = name
+
+
+# s1 = Student("Sahil")
+# print(s1.name)
+
+# del s1.name
+# print(s1.name)
+
+
+# private attributes and methods
+# private attributes and methods are meant to be used only within the class and are not accessible from outside the class.
+# we put __ before the attributes and methods to make it private in python.
+
+
+# class Account:
+#     def __init__(self, account_no, account_pass):
+#         self.acc_no = account_no
+#         # now we can't access account_pass out of this class
+#         self.__acc_pass = account_pass
+
+#     def reset_pass(self):
+#         print(self.__acc_pass)
+
+
+# a1 = Account(12345, 54321)
+# print(a1.acc_no)  # this is not the recommended for sensitive data handling.
+# a1.reset_pass()
+
+
+class Person:
+    __name = "Sahil"
+
+    def __hello(self):
+        print("hello person")
+
+    def welcome(self):
+        self.__hello()
+
+
+p1 = Person()
+print(p1.welcome())
