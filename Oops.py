@@ -71,6 +71,7 @@ s = Student(
 # static method
 # methods that don't use the self parameter
 # Decorator in python -> decorators allow us to wrap another function  in order to extend the behaviour of the wrapped function without permanently modifying it.
+# static method can't access or modify class state.
 
 
 # class College:
@@ -81,6 +82,7 @@ s = Student(
 
 #     # This is a static method, defined using the @staticmethod decorator.
 #     # this is called decorator it allows us to write a function without passing self parameter.
+# static method prevent creating method everytime a new object is being created.
 #     @staticmethod
 #     def Teacher():
 #         print("Hello from teacher!")
@@ -303,6 +305,143 @@ class Fortuner(ToyotaCar):
         print(self.type)
 
 
-fortuner1 = Fortuner("Diesel")
+# fortuner1 = Fortuner("Diesel")
 # print(fortuner1.brand)
-fortuner1.start()  # there won't be any error because it will inherit the start( method) from it's parent class
+# fortuner1.start()  # there won't be any error because it will inherit the start( method) from it's parent class
+
+# 3. Multiple inheritance -> in this type of inheritance there will be 2 or more parent classes and one child class that will inherit the variable and method of both parent classes.
+
+
+# class A:
+#     varA = "Hello from class A"
+
+
+# class B:
+#     varB = "Hello from class B"
+
+
+# class C(A, B):
+#     varC = "Hello from class c"
+
+
+# c1 = C()
+# print(c1.varC)
+# print(c1.varB)
+
+# super() method
+# it is used to access methods of parent class
+
+
+# class Car:
+#     def __init__(self, type):
+#         self.type = type
+
+#     @staticmethod
+#     def start():
+#         print("Car started......")
+
+#     @staticmethod
+#     def stop():
+#         print("car stopped......")
+
+
+# class ToyotaCar(Car):
+#     def __init__(self, type, name):
+#         super().__init__(type)
+#         super().start()
+#         self.name = name
+
+
+# car1 = ToyotaCar("electric", "Prius")
+# print(car1.type)
+
+
+# class method ->
+
+
+# class Person:
+#     name = "Sahil"
+
+#     def changeName(self, name):
+#         self.name = name
+
+
+# p = Person()
+# p.changeName("Rahil")
+# print(p.name)
+# print(Person.name)
+
+
+# problem is we want to change the class attribute name but we can't achieve it this way.
+
+# 1. we can do that in the changeName method we can write "Person.name = name" instead of "self.name = name"
+
+
+# class Person:
+#     name = "Sahil"
+
+#     def changeName(self, name):
+#         Person.name = name
+
+
+# p = Person()
+# p.changeName("Rahil")
+# print(p.name)
+# print(Person.name)
+
+
+# 2. second is in the changeName method we can write "self.__class__.name = name".
+
+# class Person:
+#     name = "Sahil"
+
+#     def changeName(self, name):
+#         self.__class__.name = name
+
+# p = Person()
+# p.changeName("Rahil")
+# print(p.name)
+# print(Person.name)
+
+# 3. but when we want directly to access class attributes in the method we can achieve it by "class method" decorator. (@classmethod) it takes cls as its first parameter.
+
+
+# class Person:
+#     name = "Sahil"
+
+#     @classmethod
+#     def changeName(cls, name):
+#         cls.name = name
+
+
+# p = Person()
+# p.changeName("Rahil")
+# print(p.name)
+# print(Person.name)
+
+
+#! @property -> we use property decorator on any method in the class to use the method as property.
+
+class Student:
+    def __init__(self, math, phy, chem):
+        self.math = math
+        self.phy = phy
+        self.chem = chem
+
+    @property
+    def Percentage(self):
+        # This property dynamically calculates and returns the percentage.
+        return str(round((self.phy + self.math + self.chem) / 3, 2)) + "%"
+
+
+# Example usage of the Student class:
+student1 = Student(98, 89, 90)
+print(student1.phy)  # Accessing an attribute
+print(student1.Percentage)  # Accessing the computed percentage as a property
+
+# Problem: If we update attributes (phy, chem, math), the Percentage updates dynamically,
+# solving the issue of outdated calculations.
+
+student1.phy = 78  # Updating the physics score
+print(student1.phy)  # Updated physics score
+print(student1.Percentage)  # Automatically updated percentage reflecting the new values
