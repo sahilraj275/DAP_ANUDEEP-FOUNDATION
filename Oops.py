@@ -213,15 +213,96 @@ s = Student(
 # a1.reset_pass()
 
 
-class Person:
-    __name = "Sahil"
+# class Person:
+#     __name = "Sahil"
 
-    def __hello(self):
-        print("hello person")
+# making method as private
+#     def __hello(self):
+#         print("hello person")
 
-    def welcome(self):
-        self.__hello()
+#     def welcome(self):
+#         self.__hello()
 
 
-p1 = Person()
-print(p1.welcome())
+# p1 = Person()
+# print(p1.welcome())
+
+# Inheritance
+# when one class derives the properties and method  of another class.
+
+
+class Car:
+    color = "Blue"
+
+    @staticmethod
+    def start():
+        print("Car started..")
+
+    @staticmethod
+    def stop():
+        print("Car stopped..")
+
+
+class ToyotaCar(Car):
+    def __init__(self, name):
+        self.name = name
+        print(self.name)
+
+
+# car1 = ToyotaCar("Fortuner")
+# car2 = ToyotaCar("Prius")
+# print(car1.color)
+
+# types of inheritance
+# 1. Single Inheritance
+# 2. Multi-level inheritance
+# 3. Multiple inheritance
+
+
+# 1. Single Inheritance -> in this tyoe of inheritance there is one base class and one derived class.
+# class Car:
+#     color = "Blue"
+
+#     @staticmethod
+#     def start():
+#         print("Car started..")
+
+#     @staticmethod
+#     def stop():
+#         print("Car stopped..")
+
+
+# class ToyotaCar(Car):
+#     def __init__(self, name):
+#         self.name = name
+#         print(self.name)
+
+# 2. Multi-level inheritance -> in this type of inheritance there is one base class that will pass on its properties and method to a child class and then this child class pass on its and its parent class properties and behaviour to another child class.
+
+
+class Car:
+
+    @staticmethod
+    def start():
+        print("Car started..")
+
+    @staticmethod
+    def stop():
+        print("Car stopped..")
+
+
+class ToyotaCar(Car):
+    def __init__(self, brand):
+        self.brand = brand
+        print(self.brand)
+
+
+class Fortuner(ToyotaCar):
+    def __init__(self, type):
+        self.type = type
+        print(self.type)
+
+
+fortuner1 = Fortuner("Diesel")
+# print(fortuner1.brand)
+fortuner1.start()  # there won't be any error because it will inherit the start( method) from it's parent class
